@@ -1,9 +1,10 @@
 #include <cstddef>
 #include <cstring>
+#include <iostream>
 #include <algorithm>
 
 struct String {
-	String(const char *str = "") {
+	String(const char * str = "") {
     size = strlen(str);
     this->str = new char[size + 1];
     strcpy(this->str, str);
@@ -53,10 +54,23 @@ struct String {
     delete [] buffer;
   };
 
+  char & at(size_t idx)       {
+    std::cout << "non const" << std::endl;
+    return str[idx];
+  }
+  char   at(size_t idx) const {
+    std::cout << "const" << std::endl;
+    return str[idx];
+  }
+
 	size_t size;
 	char *str;
 };
 
 int main() {
+  String greet("Hello");
+  char ch1 = greet.at(0);
+  String const const_greet("Hello, Const!");
+  char const & ch2 = const_greet.at(0);
   return 42;
 }
