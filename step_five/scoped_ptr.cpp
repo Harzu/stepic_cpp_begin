@@ -2,18 +2,21 @@ struct Expression;
 struct Number;
 struct BinaryOperation;
 
-struct ScopedPtr {
+struct ScopedPtr
+{
     explicit ScopedPtr(Expression * ptr = 0) : ptr_(ptr) {};
 
     ~ScopedPtr() { delete ptr_; };
     Expression * get() const { return ptr_; };
-    Expression * release() {
+    Expression * release()
+    {
         Expression * result = ptr_;
         ptr_ = 0;
         return result;
     };
 
-    void reset(Expression * ptr = 0) {
+    void reset(Expression * ptr = 0)
+    {
         delete ptr_;
         ptr_ = ptr;
     };

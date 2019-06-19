@@ -12,7 +12,3 @@ bool check_equals(Expression const *left, Expression const *right)
     if (left_vptr == right_vptr) return true;
     return false;
 }
-
-int main() {
-  return 42;
-}

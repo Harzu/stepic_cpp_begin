@@ -21,12 +21,14 @@ struct BinaryOperation : Expression
         : left(left), op(op), right(right)
     { }
     
-    ~BinaryOperation() {
+    ~BinaryOperation()
+    {
         delete left;
         delete right;
     }
     
-    double evaluate() const {
+    double evaluate() const
+    {
         double left = this->left->evaluate();
         double right = this->right->evaluate();
         

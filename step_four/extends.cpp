@@ -41,7 +41,3 @@ struct Archer : LongRange
 
     unsigned accuracy() const;
 };
-
-int main() {
-  return 42;
-}

@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-struct Visitor {
+struct Visitor
+{
     virtual void visitNumber(Number const * number) = 0;
     virtual void visitBinaryOperation(BinaryOperation const * operation) = 0;
     virtual ~Visitor() { }
