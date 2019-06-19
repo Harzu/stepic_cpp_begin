@@ -12,7 +12,8 @@ void reverse_str()
     }
 }
 
-int main() {
-  reverse_str();
-  return 0;
+int main()
+{
+    reverse_str();
+    return 0;
 }
